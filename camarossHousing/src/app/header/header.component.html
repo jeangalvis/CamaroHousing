@@ -1,0 +1,101 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container">
+    <a
+      class="navbar-brand"
+      routerLink=""
+      [ngClass]="{ active: menuOption == 'home' }"
+      (click)="onOption('home')"
+      ><i class="fa-solid fa-shrimp fa-2xl"></i> CamarossHousing</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-3">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink=""
+            routerLinkActive="active"
+            [ngClass]="{ active: menuOption == 'home' }"
+            (click)="onOption('home')"
+            >Inicio</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="properties"
+            routerLinkActive="active"
+            [ngClass]="{ active: menuOption == 'properties' }"
+            (click)="onOption('properties')"
+            >Propiedades</a
+          >
+        </li>
+        @if (isAuthenticated === true) {
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="publisher-dashboard"
+            routerLinkActive="active"
+            [ngClass]="{ active: menuOption == 'publisher-dashboard' }"
+            (click)="onOption('publisher-dashboard')"
+            >Panel</a
+          >
+        </li>
+        }
+      </ul>
+      <div class="ms-auto d-lg-flex gap-3">
+        @if(isAuthenticated === false){
+        <ul class="navbar-nav mx-3">
+          <li class="nav-item">
+            <a
+              class="nav-link nav-login"
+              routerLink="login"
+              routerLinkActive="active"
+              [ngClass]="{ active: menuOption == 'login' }"
+              (click)="onOption('login')"
+              >Ingresar</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="register"
+              routerLinkActive="active"
+              [ngClass]="{ active: menuOption == 'register' }"
+              (click)="onOption('register')"
+              >Registrarse</a
+            >
+          </li>
+        </ul>
+        }@if(isAuthenticated === true){
+        <ul class="navbar-nav mx-3">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              {{ username }} <i class="fa-regular fa-user fa-lg"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" (click)="onLogout()">Salir</a></li>
+            </ul>
+          </li>
+        </ul>
+        }
+      </div>
+    </div>
+  </div>
+</nav>

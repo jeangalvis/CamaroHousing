@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap");
+.title-label {
+  font-family: "Roboto", sans-serif;
+  color: #5049b7;
+}
+.td-spacing
+{
+  padding-right: 30px;
+}
+.btn-modificar{
+  background-color: #3b2ef2;
+  color: white;
+}
+.btn-modificar:hover{
+  background-color: #3b2ef2b9;
+}

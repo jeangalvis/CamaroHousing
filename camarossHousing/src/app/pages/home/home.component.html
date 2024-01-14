@@ -1,0 +1,67 @@
+<div class="body-home">
+  <div class="lp-banner">
+    <div
+      class="lp-banner-overlay d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="col-lg-12 col-xl-6 continer-banner-content text-center d-flex flex-column align-items-center"
+      >
+        <h1 class="display-4">
+          El lugar donde construirás tus mejores momentos
+        </h1>
+        <p class="col-sm-6 text-light mt-2">
+          Encontrar el lugar perfecto es más que una transacción, es un paso
+          crucial hacia el futuro que imaginas. Con nosotros, la búsqueda se
+          convierte en una experiencia emocionante, y cada propiedad cuenta una
+          historia única. Permítenos ser tu guía en este viaje, donde cada clic
+          te acerca a la realización de tus sueños inmobiliarios.
+        </p>
+        <div class="col-sm-6 lp-search-input mt-4">
+          <form class="input-group" (ngSubmit)="onSubmit()">
+            <input
+              class="form-control"
+              type="text"
+              id="lp-form-search"
+              placeholder="Ingresa Ciudad, Estado o Pais..."
+              aria-describedby="button-addon"
+              [(ngModel)]="searchTerm"
+              name="searchTerm"
+            />
+            <button class="btn button-addon" type="submit" id="button-addon">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mt-5">
+      <app-card-counts
+        [cardEnlace]="'#'"
+        [cardSubtitle]="(counts?.apartamentoAlquiler || 527).toString()"
+        [cardIcon]="'fa-regular fa-building fa-xl'"
+        [cardOffert]="'Apartamentos en Arriendo'"
+      ></app-card-counts>
+      <app-card-counts
+        [cardEnlace]="'#'"
+        [cardSubtitle]="(counts?.casasAlquiler || 723).toString()"
+        [cardIcon]="'fa-solid fa-house-chimney fa-xl'"
+        [cardOffert]="'Casas en Arriendo'"
+      ></app-card-counts>
+      <app-card-counts
+        [cardEnlace]="'#'"
+        [cardSubtitle]="(counts?.apartamentoVenta || 125).toString()"
+        [cardIcon]="'fa-regular fa-building fa-xl'"
+        [cardOffert]="'Apartamentos en Venta'"
+      ></app-card-counts>
+      <app-card-counts
+        [cardEnlace]="'#'"
+        [cardSubtitle]="(counts?.casasVentas || 378).toString()"
+        [cardIcon]="'fa-solid fa-house-chimney fa-xl'"
+        [cardOffert]="'Casas en Venta'"
+      ></app-card-counts>
+    </div>
+  </div>
+</div>

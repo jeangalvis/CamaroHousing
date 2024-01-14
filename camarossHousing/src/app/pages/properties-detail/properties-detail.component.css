@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap");
+.container {
+  font-family: "Roboto", sans-serif;
+}
+.description-text {
+  max-width: 100%;
+  overflow-x: auto;
+  word-wrap: break-word;
+  font-weight: 300;
+}
+
+.card-aside {
+  border-style: none;
+  border-radius: 10px;
+}
+.card-aside-title {
+  color: #1c1a37;
+}
+.card-information-title {
+  font-size: small;
+  color: #5d5d5d;
+  font-weight: 300;
+}
+
+.card-information-text {
+  font-size: smaller;
+}
+.card-information {
+  border-color: #d2e1e879;
+  padding: 0;
+}
+.card-information-body {
+  padding: 5px;
+}

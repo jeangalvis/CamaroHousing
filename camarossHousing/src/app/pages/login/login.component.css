@@ -1,0 +1,7 @@
+.btn-login {
+  background-color: #5049b7;
+  color: white;
+}
+.btn-login:hover {
+  background-color: #5049b7b9;
+}

@@ -1,0 +1,27 @@
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item {{ getPreviusPageClasses() }}">
+      <a class="page-link" (click)="navigateToPage(pageIndex - 1)"
+        ><i class="fa-solid fa-caret-down fa-rotate-90"></i
+      ></a>
+    </li>
+    @if(hasMorePagesBefore()){
+    <li class="page-item">
+      <span class="page-link">...</span>
+    </li>
+    } @for(page of getVisiblePages(); track $index){
+    <li class="page-item" [class.active]="pageIndex === page">
+      <a class="page-link" (click)="navigateToPage(page)">{{ page }}</a>
+    </li>
+    } @if(hasMorePagesAfter()){
+    <li class="page-item">
+      <span class="page-link">...</span>
+    </li>
+    }
+    <li class="page-item {{ getNextPageClasses() }}">
+      <a class="page-link" (click)="navigateToPage(pageIndex + 1)"
+        ><i class="fa-solid fa-caret-down fa-rotate-270"></i
+      ></a>
+    </li>
+  </ul>
+</nav>

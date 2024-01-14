@@ -1,0 +1,142 @@
+<div class="container d-flex justify-content-center">
+  <div class="col-sm-12 col-md-8 col-lg-6 mt-5">
+    <label class="title-label fs-4">Información</label>
+    <form
+      class="row g-3 mt-2"
+      [formGroup]="infoForm"
+      (submit)="onSubmit($event)"
+    >
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="inputNombre"
+          formControlName="nombre"
+          name="nombre"
+          placeholder="Nombre"
+          [ngClass]="{
+            'is-invalid':
+              hasErrors('nombre', 'required') ||
+              hasErrors('nombre', 'minlength') ||
+              hasErrors('nombre', 'maxlength')
+          }"
+        />
+        <label for="inputNombre">Nombre</label>
+        @if (showErrors) { @if (hasErrors('nombre', 'required')) {
+        <span class="text-danger">El nombre es requerido.</span>
+        }@else if (hasErrors('nombre', 'minlength')) {
+        <span class="text-danger">El nombre debe ser minimo 5 caracteres.</span>
+        }@else if (hasErrors('nombre', 'maxlength')) {
+        <span class="text-danger"
+          >El nombre debe ser maximo 50 caracteres.</span
+        >
+        } }
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="inputApellido"
+          formControlName="apellido"
+          name="apellido"
+          placeholder="Apellido"
+          [ngClass]="{
+            'is-invalid':
+              hasErrors('apellido', 'required') ||
+              hasErrors('apellido', 'minlength') ||
+              hasErrors('apellido', 'maxlength')
+          }"
+        />
+        <label for="inputApellido">Apellido</label>
+        @if (showErrors) { @if (hasErrors('apellido', 'required')) {
+        <span class="text-danger">El apellido es requerido.</span>
+        }@else if (hasErrors('apellido', 'minlength')) {
+        <span class="text-danger"
+          >El apellido debe ser minimo 5 caracteres.</span
+        >
+        }@else if (hasErrors('apellido', 'maxlength')) {
+        <span class="text-danger"
+          >El apellido debe ser maximo 50 caracteres.</span
+        >
+        } }
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="inputNombreComercial"
+          formControlName="nombreComercial"
+          name="nombreComercial"
+          placeholder="NombreComercial"
+          [ngClass]="{
+            'is-invalid':
+              hasErrors('nombreComercial', 'required') ||
+              hasErrors('nombreComercial', 'minlength') ||
+              hasErrors('nombreComercial', 'maxlength')
+          }"
+        />
+        <label for="inputNombreComercial">Nombre Comercial</label>
+        @if (showErrors) { @if (hasErrors('nombreComercial', 'required')) {
+        <span class="text-danger">El nombreComercial es requerido.</span>
+        }@else if (hasErrors('nombreComercial', 'minlength')) {
+        <span class="text-danger"
+          >El nombreComercial debe ser minimo 5 caracteres.</span
+        >
+        }@else if (hasErrors('nombreComercial', 'maxlength')) {
+        <span class="text-danger"
+          >El nombreComercial debe ser maximo 50 caracteres.</span
+        >
+        } }
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          mask=" 000-000-0000"
+          prefix="(+57)"
+          [showMaskTyped]="true"
+          class="form-control"
+          id="inputTelefono"
+          formControlName="telefono"
+          name="telefono"
+          placeholder="Telefono"
+          [ngClass]="{
+            'is-invalid':
+              hasErrors('telefono', 'required') ||
+              hasErrors('telefono', 'minlength') ||
+              hasErrors('telefono', 'maxlength')
+          }"
+        />
+        <label for="inputTelefono">Telefono</label>
+        @if (showErrors) { @if (hasErrors('telefono', 'required')) {
+        <span class="text-danger">El telefono es requerido.</span>
+        }@else if (hasErrors('telefono', 'minlength')) {
+        <span class="text-danger"
+          >El telefono debe ser minimo 5 caracteres.</span
+        >
+        }@else if (hasErrors('telefono', 'maxlength')) {
+        <span class="text-danger"
+          >El telefono debe ser maximo 20 caracteres.</span
+        >
+        } }
+      </div>
+      @if (publisher) {
+      <button type="button" class="btn btn-actualizar" (click)="onActualizar()">
+        Actualizar</button
+      >} @if(!publisher){
+      <button type="submit" class="btn btn-guardar">Guardar</button>
+      } @if (successMessage) {
+      <div class="alert alert-success mt-3 text-center" role="alert">
+        {{ successMessage }}
+      </div>
+      }@else if(RefusedMessage) {
+      <div class="alert alert-info mt-3 text-center" role="alert">
+        {{ RefusedMessage }}
+      </div>
+      } @else if(ErrorMessage){
+      <div class="alert alert-danger mt-3 text-center" role="alert">
+        {{ ErrorMessage }}
+      </div>
+      }
+    </form>
+  </div>
+</div>

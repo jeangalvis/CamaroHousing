@@ -1,0 +1,38 @@
+.info-card {
+  font-size: smaller;
+  font-weight: 500;
+  color: #929292;
+}
+.details {
+  width: 100%;
+  background-color: #f6f6f6;
+}
+.card {
+  border-color: #f3f3f3;
+  border-radius: 20px;
+  background-color: #fefefe;
+  min-height: 100%;
+}
+.card:hover {
+  cursor: pointer;
+  border-color: #60ced2;
+}
+.card-ref {
+  display: block;
+  text-decoration: none; /* Añade estilos según sea necesario para tus enlaces */
+}
+
+.card-img-top {
+  object-fit: cover;
+  height: 200px;
+  width: 100%; /* Ajusta según sea necesario */
+  border-radius: 20px 20px 0 0;
+}
+.card-body-container {
+  height: 100%;
+}
+.info-card-place {
+  margin: 0;
+  font-weight: 500;
+  color: #303030;
+}

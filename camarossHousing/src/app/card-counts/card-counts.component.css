@@ -1,0 +1,21 @@
+.card-icono {
+  color: #3d7be6;
+}
+.card-offert {
+  color: #3e546b;
+  font-size: smaller;
+  font-weight: 300;
+}
+.card-number {
+  font-weight: 700;
+}
+.card-body-container {
+  background-color: #fff4f0;
+  border-radius: 20px;
+}
+.card {
+  border-style: none;
+}
+.card-ref {
+  text-decoration: none;
+}

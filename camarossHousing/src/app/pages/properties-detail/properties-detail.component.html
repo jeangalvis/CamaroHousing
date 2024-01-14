@@ -1,0 +1,78 @@
+@if (loading) {
+<h3>Loading...</h3>
+} @if (!loading) {
+<div class="container">
+  <app-carousel [CardIdProperties]="properties?.id ?? ''"></app-carousel>
+
+  <div class="information d-md-flex justify-content-center gap-4 mt-3">
+    <div class="col-12 col-md-8">
+      <div class="description">
+        <h4>Descripción General</h4>
+        <p class="description-text">
+          {{ properties?.descripcion }} Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Voluptatibus quaerat fugiat sequi quos maxime a
+          reiciendis excepturi ex eligendi odio nam earum repellat, vel
+          voluptatum nesciunt facilis pariatur neque sit!
+        </p>
+      </div>
+      <div class="cards-information row row-cols-1 row-cols-md-3 gap-2 mx-auto">
+        <div class="card card-information col-md mb-4">
+          <div class="card-body card-information-body">
+            <h6 class="card-title card-information-title">Administracion</h6>
+            <p class="card-text card-information-text">
+              {{ properties?.administracion ? "Si" : "No" }}
+            </p>
+          </div>
+        </div>
+        <div class="card card-information col-md mb-4">
+          <div class="card-body card-information-body">
+            <h6 class="card-title card-information-title">Area</h6>
+            <p class="card-text card-information-text">
+              {{ properties?.area }} m²
+            </p>
+          </div>
+        </div>
+        <div class="card card-information col-md mb-4">
+          <div class="card-body card-information-body">
+            <h6 class="card-title card-information-title">Baños</h6>
+            <p class="card-text card-information-text">
+              {{ properties?.bano }}
+            </p>
+          </div>
+        </div>
+        <div class="card card-information col-md mb-4">
+          <div class="card-body card-information-body">
+            <h6 class="card-title card-information-title">Parqueadero</h6>
+            <p class="card-text card-information-text">
+              {{ properties?.parqueadero }}
+            </p>
+          </div>
+        </div>
+        <div class="card card-information col-md mb-4">
+          <div class="card-body card-information-body">
+            <h6 class="card-title card-information-title">Estrato</h6>
+            <p class="card-text card-information-text">
+              {{ properties?.estrato }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <aside class="information-contact col-12 col-md-4">
+      <div class="card shadow card-aside">
+        <div class="card-body">
+          <h4 class="card-title card-aside-title">
+            {{ properties?.precio | currency }}
+          </h4>
+          <h6 class="card-subtitle mb-2 text-body-secondary mt-2">
+            ¿Te interesó este inmueble?
+          </h6>
+          <button class="btn btn-outline-dark w-100" type="button">
+            Contactar
+          </button>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+}

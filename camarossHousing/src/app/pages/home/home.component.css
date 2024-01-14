@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap");
+.container {
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+  color: #ffffff;
+}
+p {
+  color: #ffffff;
+}
+
+.lp-banner-overlay {
+  background-color: rgba(0, 0, 0, 0.6); /* Ajusta según tu preferencia */
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.lp-banner {
+  background-image: url("../../../assets/banner.webp"),
+    url("../../../assets/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 70vh; /* Tamaño inicial del 70% de la altura de la ventana */
+  max-height: 100vh; /* Tamaño máximo del 100% de la altura de la ventana */
+  position: relative;
+  width: 100%; /* Ocupa el 100% del ancho */
+}
+
+.continer-banner-content {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #030a3bb9;
+  border-radius: 20px;
+}
+.button-addon {
+  color: white;
+  background-color: #673de6;
+  border-color: 1px solid #fff !important;
+}

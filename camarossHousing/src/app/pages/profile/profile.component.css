@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap");
+.title-label {
+  font-family: "Roboto", sans-serif;
+  color: #5049b7;
+}
+.btn-guardar{
+  background-color: #5049b7;
+  color: white;
+}
+.btn-guardar:hover{
+  background-color: #5049b7b9;
+}
+
+.btn-actualizar{
+  background-color: #5049b7;
+  color: white;
+}
+.btn-actualizar:hover{
+  background-color: #5049b7b9;
+}

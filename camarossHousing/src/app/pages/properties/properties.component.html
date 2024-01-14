@@ -1,0 +1,48 @@
+<div class="body-properties mt-5">
+  <div class="container">
+    <div class="form-filter d-flex justify-content-center align-items-center">
+      <app-form-filter (searchEvent)="onSearch($event)"></app-form-filter>
+    </div>
+    <div class="row row-cols-2 row-cols-sm-2 row-cols-md-4 g-4 mt-5">
+      @for (property of properties?.registers; track $index) {
+        <app-card-properties
+          [cardPrice]="property.precio"
+          [cardBano]="property.bano"
+          [cardMetros]="property.area"
+          [cardEstrato]="property.estrato"
+          [CardIdProperties]="property.id"
+          [cardUrl]="property.imageUrl"
+          [cardPais]="property.pais"
+          [cardCiudad]="property.ciudad"
+        >
+        </app-card-properties>
+      }
+    </div>
+
+    <div class="text-center mt-5">
+      @if (properties?.registers == null || properties?.registers.length === 0) {
+        @if (search !== "") {
+          <h1>
+            No tenemos inmuebles que coincidan con tu búsqueda: <span class="empty-search">{{ search }}</span>.
+            Intenta de nuevo con otros criterios de búsqueda.
+          </h1>
+        } @else {
+          <h1>No tenemos inmuebles que coincidan con tu búsqueda</h1>
+        }
+      }
+    </div>
+
+
+    @if(properties?.registers.length > 0){
+    <div class="pagination justify-content-center mt-5">
+      <app-pagination
+        [hasNextPage]="properties?.hasNextPage"
+        [hasPreviusPage]="properties?.hasPreviousPage"
+        [pageIndex]="properties?.pageIndex"
+        [totalPages]="properties?.totalPages"
+        (pageChange)="onPageChange($event)"
+      ></app-pagination>
+    </div>
+    }
+  </div>
+</div>

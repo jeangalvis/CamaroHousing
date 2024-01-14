@@ -1,0 +1,38 @@
+.nav-link.active {
+  color: #673ee6 !important;
+  font-weight: 700;
+}
+.nav-link {
+  font-weight: 700;
+}
+.nav-item {
+  position: relative;
+}
+
+.nav-item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px; /* Grosor de la franja */
+  background-color: #673ee6; /* Color de la franja */
+  transition: width 0.3s ease; /* Duración y tipo de transición */
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #673ee6 !important;
+}
+.navbar-brand {
+  font-weight: 900;
+  color: #646363;
+}
+.navbar-brand i {
+  color: #ffb01dd7;
+}

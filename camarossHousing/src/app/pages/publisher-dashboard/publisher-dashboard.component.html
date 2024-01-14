@@ -1,0 +1,65 @@
+<div class="container d-flex justify-content-center">
+  <div class="col-sm-12 col-md-8 col-lg-6 mt-5">
+    <label class="fs-4 title-label">Información</label>
+    <div class="mt-2">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-spacing">Nombre:</td>
+            <td>{{publisher?.nombre}}</td>
+          </tr>
+          <tr>
+            <td class="td-spacing">Apellido:</td>
+            <td>{{publisher?.apellido}}</td>
+          </tr>
+          <tr>
+            <td class="td-spacing">Nombre Comercial:</td>
+            <td>{{publisher?.nombreComercial}}</td>
+          </tr>
+          <tr>
+            <td class="td-spacing">Telefono:</td>
+            <td>{{publisher?.telefono}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-modificar mt-2" type="button" (click)="redirectToProfile()">Modificar</button>
+    </div>
+
+    <label class="fs-4 title-label mt-5">Propiedades</label>
+    <table class="table mt-2">
+      <thead>
+        <tr>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Accion</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (property of register; track $index) {
+        <tr>
+          <td>{{ property.descripcion }}</td>
+          <td>
+            {{
+              property.precio.toLocaleString("es-CO", {
+                style: "currency",
+                currency: "COP",
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 2
+              })
+            }}
+          </td>
+          <td>
+            <button class="btn btn-danger" type="button"><i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,88 @@
+<div class="container-filters d-flex justify-content-center align-items-center">
+  <form class="row col-md-8 g-3">
+    <div class="input-group">
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control form-control-lg form-control-clearable input-search"
+          id="floatingInputPlace"
+          aria-label="Text input with dropdown button"
+          placeholder="Ciudad, Estado, Pais..."
+          [(ngModel)]="searchQuery"
+          name="searchQuery"
+        />
+        <label for="floatingInputPlace">Ubicación</label>
+      </div>
+      <div class="form-floating">
+        <select
+          class="form-select"
+          id="floatingSelectOffert"
+          [(ngModel)]="selectedOfferts"
+          name="selectedOfferts"
+        >
+          <option value="" selected>Todos</option>
+          @for (offert of offerts; track $index) {
+          <option [value]="offert.descripcion">{{ offert.descripcion }}</option>
+          }
+        </select>
+        <label for="floatingSelectOffert">Ofertas</label>
+      </div>
+      <div class="form-floating">
+        <select
+          class="form-select"
+          id="floatingSelectDomain"
+          [(ngModel)]="selectedDomains"
+          name="selectedDomains"
+        >
+          <option value="" selected>Todos</option>
+          @for (domain of domains; track $index) {
+          <option [value]="domain.descripcion">{{ domain.descripcion }}</option>
+          }
+        </select>
+        <label for="floatingSelectDomain">Propiedad</label>
+      </div>
+      <button
+        class="btn button-addon btn-search"
+        type="button"
+        id="button-addon"
+        (click)="onSearch()"
+      >
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+
+    <label class="filter-label fs-4">Precio</label>
+    <div class="col-md-6 mb-1">
+      <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <input
+          type="text"
+          mask="separator.0"
+          thousandSeparator="."
+          class="form-control form-control-lg"
+          placeholder="Minimo"
+          aria-label="COP amount"
+          [(ngModel)]="minPrice"
+          name="minPrice"
+          (ngModelChange)="onPriceChange()"
+        />
+      </div>
+    </div>
+    <div class="col-md-6 mb-1">
+      <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <input
+          type="text"
+          mask="separator.0"
+          thousandSeparator="."
+          class="form-control form-control-lg"
+          placeholder="Maximo"
+          aria-label="COP amount"
+          [(ngModel)]="maxPrice"
+          name="maxPrice"
+          (ngModelChange)="onPriceChange()"
+        />
+      </div>
+    </div>
+  </form>
+</div>
